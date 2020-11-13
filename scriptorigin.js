@@ -66,7 +66,7 @@ const storeItems = [
         details: 'Enjoy for hours'
     },
 ];
-$('body').append("<div id = allContent class = darkBody></div>")
+$('body').append("<div id = allContent></div>")
 $('#allContent').append("<h1>Products</h1>");
 $('#allContent').append("<div id = contentContainer></div>");
 
@@ -82,26 +82,57 @@ storeItems.forEach(function(i) {
     }
 });
 $('#allContent').append("<button id = button>Toggle Dark Mode</button>")
-//let darkMode = true;
-$('#button').click(function() {
-    $('body').toggle('.darkBody');
+$('body').css( {
+    "background-color":"#eeeeee",
+    "font-family":"sans-serif",
+    "font-weight":"300",
+    "margin-top":"0",
+})
+
+$('#allContent').css( {
+    "width":"700px",
+    "margin":"0 auto",
+})
+$('#contentContainer').css( {
+    "margin-top":"0",
+    
 });
+$('h1').css( {
+    "font-weight":"150",
+})
+
+$('.infoBlock').css({
+   //"border":"1px inherit white",
+    "padding":"8px",
+    "display":"flex",
+    "margin":"8px auto",
+    "background-color":"white",
+    "border-style":"hidden",
+    "border-color":"#A9A9A9",
+    "border-radius":"3px",
+    "box-shadow":"3px 3px 10px #aaaaaa",
     
-    
-    
-    
-    
-    
-    
-    // darkMode = darkMode ? false : true;
-    // console.log(document.getElementById('differentStyle'))
-    // if (darkMode) {
-    //         $('#differentStyle').replaceWith("<link rel='stylesheet' href='style.css'>");
-            
-    //     } else {
-            
-    //         $('#differentStyle').replaceWith("<link rel='stylesheet' href='style2.css'>");
-    //     };
-    //     console.log(document.getElementById('differentStyle'))
-    // });
-    // console.log(document.getElementById('differentStyle'))
+    //"width":"250px",
+});
+$(".item").css( {
+    "flex-basis":"33%",
+    "justify-content":"flex-start",
+});
+$('.price').css({
+});
+
+$('.name').css({
+    "text-align":"left",
+});
+$('.details').css({
+    "text-align":"left",
+});
+$("button").css( {
+    "margin-top":"5px",
+    "padding":"8px",
+    "border":"1px solid #A9A9A9",
+    "border-radius":"3px",
+})
+$('#button').click(function() {
+    $('#contentContainer').toggleClass('darkMode');
+});
