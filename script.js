@@ -66,7 +66,7 @@ const storeItems = [
         details: 'Enjoy for hours'
     },
 ];
-$('body').append("<div id = allContent class = darkBody></div>")
+$('body').append("<div id = allContent></div>")
 $('#allContent').append("<h1>Products</h1>");
 $('#allContent').append("<div id = contentContainer></div>");
 
@@ -84,7 +84,9 @@ storeItems.forEach(function(i) {
 $('#allContent').append("<button id = button>Toggle Dark Mode</button>")
 //let darkMode = true;
 $('#button').click(function() {
-    $('body').toggle('.darkBody');
+    $('body').toggleClass('bodyDark');
+    $('.infoBlock').toggleClass('infoBlockDark');
+    $('button').toggleClass('buttonDark');
 });
     
     
